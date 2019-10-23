@@ -99,13 +99,15 @@ are specific to each lab will be shown on a lab relevant diagram.
 Other Azure services may be added to this workshop and the architecture
 diagram, and resulting number of labs, will change accordingly.
 
-![](media/image1.png)
+![](media/image1.png){width="6.268055555555556in"
+height="3.5430555555555556in"}
 
 Core Azure Services
 ===================
 
 In this workshop, and through the series of labs, the following Azure
-services are commonly used. These are identified here:
+services are commonly used. Familiarity with these Azure service is
+beneficial. These are identified here:
 
 > [Azure Key
 > Vault](https://azure.microsoft.com/en-us/services/key-vault)
@@ -119,8 +121,13 @@ services are commonly used. These are identified here:
 > [Azure Data Explorer
 > (ADX)](https://azure.microsoft.com/en-gb/services/data-explorer/)
 
-All services may not be used in an individual lab. Familiarity with
-these Azure service is beneficial.
+[Azure Data Factory
+(ADF)](https://azure.microsoft.com/en-us/services/data-factory/)
+
+[Azure Event
+Grid](https://azure.microsoft.com/en-us/services/event-grid/)
+
+All services may not be used in an individual lab.
 
 Subscription
 ============
@@ -128,22 +135,22 @@ Subscription
 You will need an Azure subscription into which the services identified
 in a lab can be created.
 
-[Option 1]{.underline} - Microsoft Developer Network Account (MSDN)
-Account
-
-The best way to take this workshop is to use your Microsoft Developer
-Network (MSDN) benefits if you have a subscription.
-
-Open this resource and click the \"Activate your monthly Azure credit\"
-button. If you don\'t have an Azure subscription, create a [free Azure
-account](https://azure.microsoft.com/free/) before you begin.
-
-[Option 2]{.underline} - Use Your Own Account
-
-You can also use your own account or one provided to you by your
-organization, but you must be able to create a resource group and
-create, start, and manage a the Azure services as mentioned in 'Core
-Azure Services' above.
+> **Option 1** - Microsoft Developer Network Account (MSDN) Account
+>
+> The best way to take this workshop is to use your Microsoft Developer
+> Network (MSDN) benefits if you have a subscription.
+>
+> Open this resource and click the \"Activate your monthly Azure
+> credit\" button. If you don\'t have an Azure subscription, create a
+> [free Azure account](https://azure.microsoft.com/free/) before you
+> begin.
+>
+> **Option 2** - Use Your Own Account
+>
+> You can also use your own account or one provided to you by your
+> organization, but you must be able to create a resource group and
+> create, start, and manage a the Azure services as mentioned in 'Core
+> Azure Services' above.
 
 Labs
 ====
@@ -156,12 +163,40 @@ patterns will include streaming data, automated file ingestion,
 geographical data, handling data in varying formats and Machine Learning
 (ML).
 
-The first lab \[*Lab1 -- Automated File Ingestion & Analytics*\] is
+The first lab ***Lab1 -- Automated File Ingestion & Analytics*** is
 aimed at organisations that have large batch schedules with numerous
-upstream data producers and downstream data consumers.
+upstream data producers and downstream data consumers, e.g.:
 
 -   Financial Services (Banking, Insurance)
 
 -   IoT - manufacturing (process monitoring)
 
 -   IoT -- automotive (black box/traffic monitoring)
+
+Lab 1 -- Automated File Ingestion & Analytics
+=============================================
+
+Lab Summary
+-----------
+
+This solution architecture provides support for data ingestion for both
+structured and unstructured data curation. The first five lab activities
+are associated with building the environment that will be used in this
+and subsequent labs. Lab activities 6 & 7 build and execute an ADF
+pipeline associated with the file ingestion. Lab activity gives a
+summary example of dynamic analytics with data residing in a data lake.
+
+Land files (at scale if required -- to 100's per second) to Azure Blob,
+triggering automatic file ingestion into Azure Data Lake (Gen-2) via an
+Azure Data Factory pipeline. Data can be ingested into ADX or queried
+via an external table reference. The lab can easily be enhanced to
+include structured/relational datastores (SQL Server, PostgreSQL) or
+semi-structured/non-relational datastores (e.g. Cosmos DB).
+
+Lab 1 -- Architecture
+---------------------
+
+The diagram below shows the architecture that will be built in Lab 1.
+
+![](media/image2.png){width="6.268055555555556in"
+height="3.5256944444444445in"}
