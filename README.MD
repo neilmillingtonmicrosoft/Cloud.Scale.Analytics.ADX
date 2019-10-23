@@ -43,8 +43,8 @@ intention is to also offer artefacts that can:
 > ADX within your subscription, and
 >
 > \(b) help educate how ADX can be deployed within numerous architectural
-> scenarios to address analytical use cases for data whether at rest or
-> streaming data.
+> scenarios to address analytical use cases for data whether the data is
+> at batch or streaming.
 
 Over time this workshop and, hence, solution architectures, will grow as
 labs are added. The core lab "Lab1" will remain applicable to many of
@@ -99,8 +99,7 @@ are specific to each lab will be shown on a lab relevant diagram.
 Other Azure services may be added to this workshop and the architecture
 diagram, and resulting number of labs, will change accordingly.
 
-![](media/image1.png){width="6.268055555555556in"
-height="3.5430555555555556in"}
+![](media/image1.png)
 
 Core Azure Services
 ===================
