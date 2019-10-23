@@ -43,8 +43,8 @@ intention is to also offer artefacts that can:
 > ADX within your subscription, and
 >
 > \(b) help educate how ADX can be deployed within numerous architectural
-> scenarios to address analytical use cases for data at rest or streaming
-> data.
+> scenarios to address analytical use cases for data whether at rest or
+> streaming data.
 
 Over time this workshop and, hence, solution architectures, will grow as
 labs are added. The core lab "Lab1" will remain applicable to many of
@@ -108,16 +108,17 @@ Core Azure Services
 In this workshop, and through the series of labs, the following Azure
 services are commonly used. These are identified here:
 
-[Azure Key Vault](https://azure.microsoft.com/en-us/services/key-vault)
-
-[Azure Blob
-storage](https://azure.microsoft.com/en-gb/services/storage/blobs/?&OCID=AID2000125_SEM_NLGqblqc&MarinID=NLGqblqc_79164918425499_azure%20blob%20storage_be_c__1266637735603846_kwd-79165081757877:loc-188&lnkd=Bing_Azure_Brand&msclkid=4db52d3c66491ef9feb0709dca602300&ef_id=XZ4wjAAAAD516UzT:20191012103421:s&dclid=CN-nnezCluUCFSMh0wodlHQDRg)
-
-[Azure Data Lake
-(ADLS)](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction)
-
-[Azure Data Explorer
-(ADX)](https://azure.microsoft.com/en-gb/services/data-explorer/)
+> [Azure Key
+> Vault](https://azure.microsoft.com/en-us/services/key-vault)
+>
+> [Azure Blob
+> storage](https://azure.microsoft.com/en-gb/services/storage/blobs/?&OCID=AID2000125_SEM_NLGqblqc&MarinID=NLGqblqc_79164918425499_azure%20blob%20storage_be_c__1266637735603846_kwd-79165081757877:loc-188&lnkd=Bing_Azure_Brand&msclkid=4db52d3c66491ef9feb0709dca602300&ef_id=XZ4wjAAAAD516UzT:20191012103421:s&dclid=CN-nnezCluUCFSMh0wodlHQDRg)
+>
+> [Azure Data Lake
+> (ADLS)](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction)
+>
+> [Azure Data Explorer
+> (ADX)](https://azure.microsoft.com/en-gb/services/data-explorer/)
 
 All services may not be used in an individual lab. Familiarity with
 these Azure service is beneficial.
