@@ -94,8 +94,7 @@ plethora of permutations for an Azure cloud-based architecture that is
 appropriate to your requirements. For these labs, the following
 architectural diagram will be generically used:
 
-![](media/image1.png){width="6.268055555555556in"
-height="3.5430555555555556in"}
+![](media/image1.png)
 
 Core Azure Services
 ===================
@@ -200,5 +199,4 @@ Lab 1: Architecture
 
 The diagram below shows the architecture that will be built in Lab 1.
 
-![](media/image2.png){width="6.268055555555556in"
-height="3.5256944444444445in"}
+![](media/image2.png)
