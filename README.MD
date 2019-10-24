@@ -115,12 +115,12 @@ beneficial. These are identified here:
 >
 > [Azure Data Explorer
 > (ADX)](https://azure.microsoft.com/en-gb/services/data-explorer/)
-
-[Azure Data Factory
-(ADF)](https://azure.microsoft.com/en-us/services/data-factory/)
-
-[Azure Event
-Grid](https://azure.microsoft.com/en-us/services/event-grid/)
+>
+> [Azure Data Factory
+> (ADF)](https://azure.microsoft.com/en-us/services/data-factory/)
+>
+> [Azure Event
+> Grid](https://azure.microsoft.com/en-us/services/event-grid/)
 
 Any Azure services that are specific to each lab will be identified on a
 lab related diagram and in the accompanying documentation.
@@ -174,8 +174,8 @@ upstream data producers and downstream data consumers, e.g.:
 
 -   IoT -- automotive (black box/traffic monitoring)
 
-Lab 1 -- Automated File Ingestion & Analytics
-=============================================
+Lab 1: Automated File Ingestion & Analytics
+===========================================
 
 Lab Summary
 -----------
@@ -195,9 +195,10 @@ pipeline associated with the file ingestion. Lab activity 8 gives an
 example of dynamic analytics with data residing in a data lake off a
 small set of JSON quotation records.
 
-Lab 1 -- Architecture
----------------------
+Lab 1: Architecture
+-------------------
 
 The diagram below shows the architecture that will be built in Lab 1.
 
-![](media/image2.png)
+![](media/image2.png){width="6.268055555555556in"
+height="3.5256944444444445in"}
