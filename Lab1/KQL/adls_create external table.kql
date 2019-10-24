@@ -1,0 +1,23 @@
+﻿.drop external table ExternalTableJson
+
+// Activity 8.2
+// Create the external table reference
+.create external table ExternalTableJson (quote_id: string, policy_id: string, tel_1: string, tel_2: string, email_1: string, geo_street_1: string, geo_street_2: string, geo_street_3: string, geo_town: string, geo_postcode: string, geo_country_code: string, quote_value: real  , quote_currency: string, quote_given_date: datetime , quote_valid_date: datetime)
+kind=adl 
+partition by bin(quote_given_date, 1d)
+dataformat=json
+( 
+h@'abfss://inbound-processed@adxdatalake.dfs.core.windows.net?sv=  <substitute your adxdatalake SAS key here>  '
+)
+
+//create the external table mapping (needed for a JSON file)
+.create external table ExternalTableJson json mapping "FileMapping" '[{ "column" : "quote_id", "datatype" : "string","path" : "$.quote_id"},{ "column" : "policy_id", "datatype" : "string", "path" : "$.policy_id"},{ "column" : "tel_1", "datatype" : "string", "path" : "$.tel_1"},{ "column" : "tel_2", "datatype" : "string", "path" : "$.tel_2"},{ "column" : "email_1", "datatype" : "string", "path" : "$.email_1"},{ "column" : "geo_street_1", "datatype" : "string", "path" : "$.geo_street_1"},{ "column" : "geo_street_2", "datatype" : "string", "path" : "$.geo_street_2"},{ "column" : "geo_street_3", "datatype" : "string", "path" : "$.geo_street_3"},{ "column" : "geo_town", "datatype" : "string", "path" : "$.geo_town"},{ "column" : "geo_postcode", "datatype" : "string", "path" : "$.geo_postcode"},{ "column" : "geo_country_code", "datatype" : "string", "path" : "$.geo_country_code"},{ "column" : "quote_value", "datatype" : "real", "path" : "$.quote_value"},{ "column" : "quote_currency", "datatype" : "string", "path" : "$.quote_currency"},{ "column" : "quote_given_date", "datatype" : "datetime", "path" : "$.quote_given_date"},{ "column" : "quote_valid_date", "datatype" : "datetime", "path" : "$.quote_valid_date"}]'
+
+// Activity 8.3 - query files on adxdatalake
+external_table('ExternalTableJson', 'FileMapping') | order by ( quote_id ) asc
+external_table('ExternalTableJson', 'FileMapping') | order by ( quote_id ) asc | summarize count() by policy_id
+
+// Activity 8.4 - query automatically ingested files on adxdatalake
+external_table('ExternalTableJson', 'FileMapping') | order by ( quote_id ) asc
+external_table('ExternalTableJson', 'FileMapping') | order by ( quote_id ) asc | summarize count() by policy_id
+

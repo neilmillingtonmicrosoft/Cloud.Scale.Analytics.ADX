@@ -4,10 +4,10 @@ About this workshop
 Welcome to this Azure Data Explorer (ADX) solutions workshop(s).
 
 In this workshop you will learn how to solve modern data challenges with
-ADX using a hands-on activity approach.
+ADX using hands-on activities.
 
-This workshop is intended to be taken as a self-paced or instructor-led
-lab.
+This workshop is intended to be taken self-paced or via an
+instructor-led event.
 
 This workshop is designed for data professionals who have a basic
 working knowledge of Microsoft Azure, Analytics and Cloud computing. It
@@ -27,39 +27,38 @@ Big Data.
 
 ADX is a fast, fully managed data analytics service for real-time
 analysis on large volumes of streaming data (e.g. websites and IoT
-devices) or batch/data at rest (e.g. Data Lake). You can employ ADX to
-collect, store, and analyse data for the purpose of identifying
-patterns, anomalies, enhance customer experiences, monitor devices, and
-boost operational performance.
+devices) or batch data (data at rest). You can employ ADX to collect,
+store, and analyse data for the purpose of identifying patterns,
+anomalies, enhance customer experiences, monitor devices, and boost
+operational performance.
 
 Purpose
 =======
 
 The main purpose of this workshop is to help educate and build awareness
-around ADX deployment within your solution architectures. Secondly, the
-intention is to also offer artefacts that can:
+around ADX deployment within solution architectures. Secondly, also
+offer artefacts that can:
 
 > \(a) be utilised to quickly deploy a set of Azure services that utilise
-> ADX within your subscription, and
+> ADX within your subscription, and,
 >
-> \(b) help educate how ADX can be deployed within numerous architectural
-> scenarios to address analytical use cases for data whether the data is
-> at batch or streaming.
+> \(b) help educate how ADX can be deployed within architectural scenarios
+> to address analytical use cases for data whether the data is at batch or
+> streaming.
 
-Over time this workshop and, hence, solution architectures, will grow as
+Over time this workshop, and hence solution architectures, will grow as
 labs are added. The core lab "Lab1" will remain applicable to many of
 these architectures.
 
 Content
 =======
 
-The workshop labs have been designed to enable you to work through each
-section in a step by step basis with the view to producing a working
-solution architecture according to the lab.
+The labs have been designed to enable you to work through each section
+in a step by step basis with the view to producing a working solution
+architecture at the end of each lab.
 
-Each lab will have a high-level architectural diagram. For Lab1, the
-document is "Azure Cloud Scale Analytics with ADX - Lab1.pdf". Each
-Activity in a lab will also have a high-level architectural diagram,
+Each lab will have a high-level architectural diagram, e.g. for Lab1
+this is "Azure Cloud Scale Analytics with ADX - Lab1.pdf", that will be
 identified at the start of each activity section.
 
 Lab1 has been written in a click-by-click style to encourage familiarity
@@ -91,13 +90,9 @@ Cloud Scale Analytics Architecture
 ==================================
 
 The feature rich and diverse number of Azure Data Services creates a
-plethora of permutations for an Azure based architecture that is
+plethora of permutations for an Azure cloud-based architecture that is
 appropriate to your requirements. For these labs, the following
-architectural diagram will be generically used. Any Azure services that
-are specific to each lab will be shown on a lab relevant diagram.
-
-Other Azure services may be added to this workshop and the architecture
-diagram, and resulting number of labs, will change accordingly.
+architectural diagram will be generically used:
 
 ![](media/image1.png){width="6.268055555555556in"
 height="3.5430555555555556in"}
@@ -127,7 +122,13 @@ beneficial. These are identified here:
 [Azure Event
 Grid](https://azure.microsoft.com/en-us/services/event-grid/)
 
-All services may not be used in an individual lab.
+Any Azure services that are specific to each lab will be identified on a
+lab related diagram and in the accompanying documentation.
+
+Other Azure services may be added to this workshop and the architecture
+diagram, and resulting number of labs, will change accordingly.
+
+All services may not be used concurrently in an individual lab.
 
 Subscription
 ============
@@ -179,24 +180,24 @@ Lab 1 -- Automated File Ingestion & Analytics
 Lab Summary
 -----------
 
+Land files at scale (up to 100's per second) to Azure Blob, triggering
+automatic file ingestion into Azure Data Lake (Gen-2) via an Azure Data
+Factory pipeline. Data can be ingested into ADX or queried via an
+external table reference. The lab can easily be enhanced to include
+structured/relational datastores (SQL Server, PostgreSQL) or
+semi-structured/non-relational datastores (e.g. Cosmos DB).
+
 This solution architecture provides support for data ingestion for both
 structured and unstructured data curation. The first five lab activities
 are associated with building the environment that will be used in this
 and subsequent labs. Lab activities 6 & 7 build and execute an ADF
-pipeline associated with the file ingestion. Lab activity gives a
-summary example of dynamic analytics with data residing in a data lake.
-
-Land files (at scale if required -- to 100's per second) to Azure Blob,
-triggering automatic file ingestion into Azure Data Lake (Gen-2) via an
-Azure Data Factory pipeline. Data can be ingested into ADX or queried
-via an external table reference. The lab can easily be enhanced to
-include structured/relational datastores (SQL Server, PostgreSQL) or
-semi-structured/non-relational datastores (e.g. Cosmos DB).
+pipeline associated with the file ingestion. Lab activity 8 gives an
+example of dynamic analytics with data residing in a data lake off a
+small set of JSON quotation records.
 
 Lab 1 -- Architecture
 ---------------------
 
 The diagram below shows the architecture that will be built in Lab 1.
 
-![](media/image2.png){width="6.268055555555556in"
-height="3.5256944444444445in"}
+![](media/image2.png)
