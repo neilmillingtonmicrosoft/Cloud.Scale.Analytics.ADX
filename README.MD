@@ -1,5 +1,5 @@
-About this workshop
-===================
+About this workshop 
+====================
 
 Welcome to this Azure Data Explorer (ADX) solutions workshop(s).
 
@@ -69,8 +69,8 @@ templates) but all will utilise the portal in the first instance.
 Background Reading
 ==================
 
-The following links will help with the understanding of ADX Cloud Scale
-Analytics and Cloud based architectures.
+The following links will help with the understanding of ADX and Cloud
+based architectures.
 
 For an in depth look that the ADX product, the
 [whitepaper](https://azure.microsoft.com/en-us/resources/azure-data-explorer/)
@@ -100,8 +100,10 @@ Core Azure Services
 ===================
 
 In this workshop, and through the series of labs, the following Azure
-services are commonly used. Familiarity with these Azure service is
-beneficial. These are identified here:
+services will be deployed. Not all of these Azure services will be used
+in each lab, however, a number of them are commonly utilised. As such,
+familiarity with the following Azure services is beneficial for this
+workshop and Azure Cloud Analytics Architectures:
 
 > [Azure Key
 > Vault](https://azure.microsoft.com/en-us/services/key-vault)
@@ -114,18 +116,19 @@ beneficial. These are identified here:
 >
 > [Azure Data Explorer
 > (ADX)](https://azure.microsoft.com/en-gb/services/data-explorer/)
->
-> [Azure Data Factory
-> (ADF)](https://azure.microsoft.com/en-us/services/data-factory/)
->
-> [Azure Event
-> Grid](https://azure.microsoft.com/en-us/services/event-grid/)
 
-Any Azure services that are specific to each lab will be identified on a
-lab related diagram and in the accompanying documentation.
+[Azure Data Factory
+(ADF)](https://azure.microsoft.com/en-us/services/data-factory/)
+
+[Azure Event
+Grid](https://azure.microsoft.com/en-us/services/event-grid/)
+
+Any Azure services that are specific to each lab will be identified on
+an associated lab related architecture diagram and in the accompanying
+lab documentation.
 
 Other Azure services may be added to this workshop and the architecture
-diagram, and resulting number of labs, will change accordingly.
+diagrams, and resulting number of labs, will change accordingly.
 
 All services may not be used concurrently in an individual lab.
 
@@ -159,44 +162,62 @@ This workshop will comprise several labs that will increase over time.
 Labs will introduce different analytical scenarios, all using Azure Data
 Factory (ADX), but will incorporate different architectural patterns to
 give an understanding of implementation scenarios. Such architectural
-patterns will include streaming data, automated file ingestion,
-geographical data, handling data in varying formats and Machine Learning
-(ML).
+patterns will include streaming data ingestion, batch data ingestion,
+automated file ingestion, geographical data, handling data in varying
+formats and Machine Learning (ML).
+
+The architecture can easily be enhanced to include additional Azure
+services, such as, structured/relational datastores (SQL Server,
+PostgreSQL) or semi-structured/non-relational datastores (e.g. Cosmos
+DB).
 
 The first lab ***Lab1 -- Automated File Ingestion & Analytics*** is
-aimed at organisations that have large batch schedules with numerous
-upstream data producers and downstream data consumers, e.g.:
+aimed at organisations that have large ***batch*** schedules with
+numerous upstream data producers and downstream data consumers, e.g.
+Financial Services (Banking, Insurance)
 
--   Financial Services (Banking, Insurance)
-
--   IoT - manufacturing (process monitoring)
-
--   IoT -- automotive (black box/traffic monitoring)
-
-Lab 1: Automated File Ingestion & Analytics
-===========================================
+Lab 1 -- Automated File Ingestion & Analytics
+=============================================
 
 Lab Summary
 -----------
 
-Land files at scale (up to 100's per second) to Azure Blob, triggering
-automatic file ingestion into Azure Data Lake (Gen-2) via an Azure Data
-Factory pipeline. Data can be ingested into ADX or queried via an
-external table reference. The lab can easily be enhanced to include
-structured/relational datastores (SQL Server, PostgreSQL) or
-semi-structured/non-relational datastores (e.g. Cosmos DB).
+Land files at scale (to a maximum of 100 per second) to Azure Blob,
+triggering automatic file ingestion into ADLS Gen-2. File ingestion is
+triggered via blob create events that Azure Event Grid detects and calls
+a parameterised ADF pipeline. In this lab data will be queried via an
+external table reference from ADX to ADLS**\*\*.** In subsequent labs
+data will be ingested into ADX.
 
 This solution architecture provides support for data ingestion for both
-structured and unstructured data curation. The first five lab activities
+structured and semi-structured data. Demo data is based on simplistic
+JSON documents to demonstrate concepts. The first five lab activities
 are associated with building the environment that will be used in this
-and subsequent labs. Lab activities 6 & 7 build and execute an ADF
-pipeline associated with the file ingestion. Lab activity 8 gives an
-example of dynamic analytics with data residing in a data lake off a
-small set of JSON quotation records.
+lab. Activities 6 & 7 build and execute an ADF pipeline associated with
+the file ingestion to ADLS. Activity 8 provides an example of dynamic
+analytics with data residing in ADLS via an external table reference. As
+mentioned, this is based off a small set of simulated JSON quotation
+records.
 
-Lab 1: Architecture
--------------------
+Lab 1 -- Architecture
+---------------------
 
 The diagram below shows the architecture that will be built in Lab 1.
 
 ![](media/image2.png)
+
+**\*\*** *ADX has a highly performant architecture for analysis of data
+that is achieved via memory and SSD based caching. To achieve this
+performance data is ingested into the ADX cluster(s) in either a batch
+or real-time manner (both forms of ingestion will be covered in future
+labs).*
+
+*The external table reference does not ingest data into the ADX cluster
+-- rather the data resides on Azure Blob or Azure ADLS, i.e. external to
+the cluster. As such, external table queries are not as performant due
+to the lack of caching and are ideal in use-cases were "what if "or
+point-in-time analysis is required. This is commonly on smaller sets of
+data or when it is not operationally efficient to ingest all data into
+ADX. Such use-cases could be:*
+
+-   *average volume/quote/valuations in a period (intra-day, hours)*
